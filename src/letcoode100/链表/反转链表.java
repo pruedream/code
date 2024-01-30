@@ -32,6 +32,8 @@ public class 反转链表 {
 
             return q1;
            */
+
+            return null;
         }
 
 
