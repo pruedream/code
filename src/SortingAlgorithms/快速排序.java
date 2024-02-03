@@ -7,9 +7,9 @@ package SortingAlgorithms;
 public class 快速排序 {
 
     public static void main(String[] args) {
-        int[] qw = {2,5,8,1,4,8,34,9,6,25,47,65};
+        int[] qw = {3,2,1,5,6,4};
 
-         sort(qw,0,11);
+         sort(qw,0,5);
 
          for (int i : qw){
              System.out.println(i);
@@ -29,6 +29,7 @@ public class 快速排序 {
            if(left>=right){
              return;
            }
+           //用两个指针一起从头开始， 寻找小于的值，然后两个指针交换
            int i=left,h=left;
            while (h!=right){
                if(sd[h]<=sd[right]){
@@ -43,8 +44,10 @@ public class 快速排序 {
            sd[i]=sd[right];
            sd[right] = zx;
 
-           sort(sd,left,i-1);
-           sort(sd,i+1,right);
+
+
+           sort(sd,left,i-1 );
+           sort(sd,i+1,right );
     }
 
 
