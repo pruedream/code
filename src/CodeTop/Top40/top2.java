@@ -9,32 +9,28 @@ package CodeTop.Top40;
 public class top2 {
 
     class Solution {
+
         public ListNode reverseList(ListNode head) {
-             ListNode q1 = null;
-             ListNode q2= head;
-             ListNode q3= head;
+            if (head == null || head.next == null) {
+                return head;
+            }
 
-             while (q2!=null){
-                q3 = q2.next;
-                q2.next = q1;
-                q1= q2;
-                q2= q3;
-             }
-           return q1;
-
+            ListNode listNode = reverseList(head.next);
+            head.next.next = head;
+            head.next = null;
+            return listNode;
         }
 
 
+        class ListNode {
+            int val;
+            ListNode next;
 
-    }
+            public ListNode(int val, ListNode next) {
+                this.val = val;
+                this.next = next;
+            }
 
-
-    class ListNode{
-        int val;
-        ListNode next;
-        public ListNode(int val,ListNode next){
-            this.val = val;
-            this.next = next;
         }
 
     }
