@@ -29,6 +29,7 @@ public class 组合总和 {
         }
 
         public void backTracking(int start, int[] candidates, int target) {
+           // 防止无限递归
             if (all > target) {
                 return;
             }
