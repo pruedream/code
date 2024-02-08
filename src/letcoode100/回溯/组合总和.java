@@ -8,6 +8,12 @@ import java.util.List;
  * @version 1.0.0
  * <p>
  * 39. 组合总和
+ *         组合总和一定要记得加 ，防止一直递归
+ *             if (all > target) {
+ *                 return;
+ *             }
+ *
+ *
  */
 public class 组合总和 {
 
