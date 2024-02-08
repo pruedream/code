@@ -39,6 +39,7 @@ public class 组合需要去重 {
 
              for(int i=start;i<candidates.length;i++){
                  // 去重就是对同一层进行去重，也就是本次for循环里的元素，不涉及到下一层。
+                 // used 的作用是为了防止去重作用到下一层
                  if(i!=0 && candidates[i] == candidates[i-1] && !used[i-1]){
                    continue;
                  }
