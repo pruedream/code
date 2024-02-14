@@ -10,23 +10,31 @@ package letcoode100.链表.删除链表元素;
 public class 移除链表元素 {
     class Solution {
         public ListNode removeElements(ListNode head, int val) {
-           ListNode newHead = new ListNode(-1);
-           ListNode result = newHead;
-           newHead.next = head;
-           ListNode q1 = head;
+            if (head == null) {
+                return head;
+            }
+            ListNode newHead = new ListNode(-1);
+            ListNode result = newHead;
+            newHead.next = head;
 
-           while (q1!=null){
-               ListNode as = q1.next;
-               if(q1.val == val){
-                   newHead.next = as;
-                   q1 = as;
-               }else {
 
-                   q1 = as;
-                   newHead = newHead.next;
-               }
-           }
-           return result.next;
+            ListNode fast = head ;
+
+            while (fast!=null && fast.next!=null) {
+                if(fast.val == fast.next.val){
+                    while (fast!=null && fast.next!=null && fast.next.val == fast.val){
+                        fast = fast.next;
+                    }
+                    ListNode w1 = fast.next;
+                    newHead.next = w1;
+                    fast = fast.next;
+                }else {
+                    fast = fast.next;
+                    newHead = newHead.next;
+                }
+
+            }
+            return  result.next;
         }
     }
 

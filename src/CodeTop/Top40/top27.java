@@ -1,8 +1,5 @@
 package CodeTop.Top40;
 
-import com.sun.org.apache.bcel.internal.generic.NEW;
-
-import java.security.AlgorithmConstraints;
 
 /**
  * @author spike
@@ -14,7 +11,7 @@ import java.security.AlgorithmConstraints;
 public class top27 {
 
     class Solution {
-        public ListNode deleteDuplicates(ListNode head) {
+        public ListNode removeElements(ListNode head, int val) {
             if (head == null) {
                 return head;
             }
@@ -26,20 +23,20 @@ public class top27 {
             ListNode fast = head ;
 
             while (fast!=null && fast.next!=null) {
-                  if(fast.val == fast.next.val){
-                      while (fast!=null && fast.next!=null && fast.next.val == fast.val){
-                          fast = fast.next;
-                      }
-                      ListNode w1 = fast.next;
-                      newHead.next = w1;
-                      fast = fast.next;
-                  }else {
-                      fast = fast.next;
-                      newHead = newHead.next;
-                  }
+                if(fast.val == fast.next.val){
+                    while (fast!=null && fast.next!=null && fast.next.val == fast.val){
+                        fast = fast.next;
+                    }
+                    ListNode w1 = fast.next;
+                    newHead.next = w1;
+                    fast = fast.next;
+                }else {
+                    fast = fast.next;
+                    newHead = newHead.next;
+                }
 
             }
-         return  result.next;
+            return  result.next;
         }
     }
 
