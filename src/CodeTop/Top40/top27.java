@@ -1,5 +1,7 @@
 package CodeTop.Top40;
 
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
 import java.security.AlgorithmConstraints;
 
 /**
@@ -16,32 +18,39 @@ public class top27 {
             if (head == null) {
                 return head;
             }
-            ListNode newHead = new ListNode();
+            ListNode newHead = new ListNode(-1);
             ListNode result = newHead;
             newHead.next = head;
 
-            ListNode slow = head;
-            ListNode fast = head.next;
 
-            while (fast!=null) {
-                  if(slow.val == fast.val){
-                      while (fast!=null && slow.val == fast.val){
+            ListNode fast = head ;
+
+            while (fast!=null && fast.next!=null) {
+                  if(fast.val == fast.next.val){
+                      while (fast!=null && fast.next!=null && fast.next.val == fast.val){
                           fast = fast.next;
                       }
-                      newHead.next = fast;
-
+                      ListNode w1 = fast.next;
+                      newHead.next = w1;
+                      fast = fast.next;
                   }else {
                       fast = fast.next;
-                      slow = slow.next;
+                      newHead = newHead.next;
                   }
 
             }
-
+         return  result.next;
         }
     }
 
     class ListNode {
         int val;
         ListNode next;
+
+        public ListNode(){
+        }
+        public ListNode(int val){
+            this.val = val;
+        }
     }
 }
