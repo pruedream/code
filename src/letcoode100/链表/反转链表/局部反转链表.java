@@ -21,7 +21,7 @@ public class 局部反转链表 {
                   return head;
         }
 
-        // 反转链表前n,起始索引为1
+        // 反转链表前n,起始索引为1           递归反转法
         ListNode path = null;
         public ListNode reverse(ListNode head,int n){
              if(n==1){
@@ -34,6 +34,8 @@ public class 局部反转链表 {
              return reverse;
         }
 
+
+        // 反转链表前n     迭代反转法
 
 
     }
