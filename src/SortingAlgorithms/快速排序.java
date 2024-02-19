@@ -44,8 +44,6 @@ public class 快速排序 {
            sd[i]=sd[right];
            sd[right] = zx;
 
-
-
            sort(sd,left,i-1 );
            sort(sd,i+1,right );
     }
