@@ -5,7 +5,7 @@ package letcoode100.队列栈;
  * @version 1.0.0
  *
  *
- *
+ *考虑
  *
  */
 public class 波兰数 {
