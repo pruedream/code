@@ -1,4 +1,4 @@
-package letcoode100.回溯;
+package letcoode100.回溯.排列;
 
 import java.util.ArrayList;
 import java.util.List;
