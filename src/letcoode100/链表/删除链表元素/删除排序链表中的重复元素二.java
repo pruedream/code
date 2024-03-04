@@ -10,7 +10,7 @@ package letcoode100.链表.删除链表元素;
  */
 public class 删除排序链表中的重复元素二 {
 
-    class Solution {
+    /*class Solution {
         public ListNode removeElements(ListNode head, int val) {
             if (head == null) {
                 return head;
@@ -39,7 +39,34 @@ public class 删除排序链表中的重复元素二 {
             return  result.next;
         }
     }
+*/
+    class Solution {
+        public ListNode deleteDuplicates(ListNode head) {
+            ListNode newHead = new ListNode(-1);
+            newHead.next = head;
+            ListNode q1 = newHead;
+            ListNode q2 = head;
 
+
+            while(q2!=null){
+                if(q2.next !=null && q2.val == q2.next.val){
+                    int a = q2.val;
+                    while(q2!=null && q2.val==a){
+                        q2 = q2.next;
+                    }
+                    q1.next = q2;
+
+                }else{
+                    q2 = q2.next;
+                    q1 = q1.next;
+                }
+
+            }
+
+            return newHead.next;
+
+        }
+    }
     class ListNode {
         int val;
         ListNode next;
