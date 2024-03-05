@@ -12,7 +12,7 @@ import javax.swing.tree.TreeNode;
 public class 二叉树的直径 {
 
     class Solution {
-        int max = 1;
+        int max = 1;// max是节点数，直径要减一
 
         public int diameterOfBinaryTree(TreeNode root) {
             ok(root);
