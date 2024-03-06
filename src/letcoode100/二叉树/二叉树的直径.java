@@ -15,6 +15,7 @@ public class 二叉树的直径 {
         int max = 1;// max是节点数，直径要减一
 
         public int diameterOfBinaryTree(TreeNode root) {
+
             ok(root);
             return max - 1;
         }
