@@ -1,10 +1,12 @@
-package letcoode100.动态规划.子序列;
+package letcoode100.动态规划.子序列.求递增子序列连续or不连续;
 
 import java.util.Arrays;
 
 /**
  * @author spike
  * @version 1.0.0
+ *
+ * 674. 最长连续递增序列
  */
 public class 最长连续递增序列 {
 
